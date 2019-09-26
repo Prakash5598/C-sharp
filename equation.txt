@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication9_Equation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string b, d, eq = "15N2+3H2O->2NH3";                       
+            string a ="", em = "";           
+            char c;           
+            string[] str = eq.Split('-', '>', '+');
+            //List<string> l1 = new List<string>();
+            foreach (string i in str)
+            {
+                //b = i.Substring(0);
+                //a = i.Substring(1, i.Length);
+                //Console.WriteLine(b + "    " + a);
+                if (i != em)
+                {
+                    
+                    b = i.Substring(0,1);
+                    //c = Convert.ToChar(b);
+                    c = Convert.ToChar(b);
+                    if (char.IsDigit(c))
+                    {
+                        a = i.Substring(1, i.Length-1);
+                        Console.WriteLine(c + " Molecule of " + a);
+                    }
+                    else
+                    {
+
+                        d = i.Substring(0, i.Length );
+                        Console.WriteLine(1+ " Molecule of " + d);
+                    }                  
+                   
+                }
+            }            
+        }
+    }
+}
+
